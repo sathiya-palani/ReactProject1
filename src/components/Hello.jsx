@@ -1,13 +1,16 @@
 
 
 
-// const Hello = () => {
-//   return (
-//     <div>
-//         <p>Hello world!</p>
+const Hello = (props) => {
 
-//     </div>
-//   )
-// }
+    console.log(props);
 
-// export default Hello;
+  return (
+    <div>
+        <p>Hello ,{props.name}</p>
+
+    </div>
+  )
+}
+
+export default Hello;
