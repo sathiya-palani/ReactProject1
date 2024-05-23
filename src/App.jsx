@@ -1,13 +1,17 @@
 
-import Hello from "./components/Hello";
 
 // component App
 
 const App = () => {
+
+  const a = 10;
+  const b = 20;
+  const now = new Date ();
+
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello />
+      Date:{now.toString()}
+      <p>{a} plus {b} is {a+b}</p>
     </div>
   )
 }
