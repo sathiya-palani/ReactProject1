@@ -1,20 +1,35 @@
 
-import { Component } from "react";
-import Hello from "./components/Hello";
+import React, { Component } from 'react';
 
-class App extends Component {
- // override the render method
-  render () {
-    //return JSX
+export class App extends Component {
+
+  constructor(props) {
+    super(props); // Call the constructor of the parent class
+
+    // set the initial state
+    this.state = {
+      counter: 0
+    }
+  }
+
+  handleIncrement = () => {
+    // update the state using the setState method
+    this.setState({
+      counter: this.state.counter + 1
+    });
+  }
+
+  render() {
+
+    console.log(this.state);
+
     return (
       <div>
-        <Hello
-        name="John" 
-        />
+        <p>Count: {this.state.counter}</p>
+        <button onClick={this.handleIncrement}>Increment</button>
       </div>
     )
   }
 }
 
 export default App;
-
