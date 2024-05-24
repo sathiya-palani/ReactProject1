@@ -1,20 +1,27 @@
+// CLASS COMPONENT
+
+import { Component } from "react";
 
 
-
-const App = () => {
-
-  const handleChange = (e) => {
-    console.log(e.target.value);
+class App extends Component {
+ // override the render method
+  render () {
+    return (
+      <div>
+        <h1>My React App</h1>
+      </div>
+    )
   }
-
-  return (
-    <div>
-      <h1>React App</h1>
-     <input
-     type="text"
-     onChange={handleChange}/>
-    </div>
-  )
 }
 
-export default App
+export default App;
+
+// Functional component with function
+// function App () {
+//   return (
+//     <div>
+//       <h1>MY REACT APP</h1>
+//     </div>
+//   )
+// }
+// export default App;
