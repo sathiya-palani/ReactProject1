@@ -8,7 +8,9 @@ class App extends Component {
     //return JSX
     return (
       <div>
-        <Hello />
+        <Hello
+        name="John" 
+        />
       </div>
     )
   }
