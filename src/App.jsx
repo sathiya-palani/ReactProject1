@@ -4,9 +4,9 @@ import Todo from "./components/Todo";
 const App = () => {
 
   const todos = [
-    { id: 1 , title : 'Buy Milk ', completed :false},
+    { id: 1 , title : 'Buy Milk ', completed :true},
     { id: 2 , title :'Buy bread ', completed :false},
-    { id: 3 , title : 'Buy butter ', completed :false}
+    { id: 3 , title : 'Buy butter ', completed :true}
   ]
 
   return (
