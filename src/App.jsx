@@ -1,47 +1,28 @@
 
-import React, { Component } from 'react';
+import {useState} from 'react';
 
+const App = () => {
+  let [count , setCount] = useState(0);
 
-class Hello extends Component {
-
-  componentDidMount() {
-    console.log('Hello Component mounted');
+  const handleIncrement = () => {
+    setCount(count + 1);
   }
 
-   componentWillUnamount() {
-    console.log('Hello componet unmounted');
-   }
-
-   render() {
-    return (
-      <h1>Hello World!</h1>
-    )
-   }
-}
-
-  
-export class App extends Component {
-
- constructor(props) {
-  super(props);
-  this.state ={
-    showHello : true    
+  const handleDecrement = () => {
+    setCount(count - 1);
   }
- }
-  handleToggle =() => {
-    this.setState ( {
-      showHello: !this.state.showHello
-    })
+  const handleReset = () => {
+    setCount(0);
   }
 
-  render () {
-    return (
-      <div>
-        <button onClick={this.handleToggle}>Toggle Hello</button>
-        {this.state.showHello && <Hello />}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h1>Counter :{count}</h1>
+      <button onClick ={handleIncrement}>Increment</button>
+      <button onClick ={handleDecrement}>Decrement</button>
+      <button onClick  ={handleReset}>Reset</button>
+    </div>
+  )
 }
 
 export default App;
