@@ -1,32 +1,44 @@
 
 import React, { Component } from 'react';
 
+
+class Hello extends Component {
+
+  componentDidMount() {
+    console.log('Hello Component mounted');
+  }
+
+   componentWillUnamount() {
+    console.log('Hello componet unmounted');
+   }
+
+   render() {
+    return (
+      <h1>Hello World!</h1>
+    )
+   }
+}
+
+  
 export class App extends Component {
 
-  constructor(props) {
-    super(props); // Call the constructor of the parent class
-
-    // set the initial state
-    this.state = {
-      counter: 0
-    }
+ constructor(props) {
+  super(props);
+  this.state ={
+    showHello : true    
+  }
+ }
+  handleToggle =() => {
+    this.setState ( {
+      showHello: !this.state.showHello
+    })
   }
 
-  handleIncrement = () => {
-    // update the state using the setState method
-    this.setState({
-      counter: this.state.counter + 1
-    });
-  }
-
-  render() {
-
-    console.log(this.state);
-
+  render () {
     return (
       <div>
-        <p>Count: {this.state.counter}</p>
-        <button onClick={this.handleIncrement}>Increment</button>
+        <button onClick={this.handleToggle}>Toggle Hello</button>
+        {this.state.showHello && <Hello />}
       </div>
     )
   }
