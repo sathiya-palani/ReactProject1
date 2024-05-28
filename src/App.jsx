@@ -1,39 +1,34 @@
 
-import { useEffect ,useState} from 'react';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+// create a router
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <h1>Hello, World!!</h1>
+  },
+  {
+    path: "/about",
+    element: <h1>About Us</h1>
+  },
+  {
+    path: "/contact",
+    element: <h1>Contact Us</h1>
+  },
+  {
+    path: "/services",
+    element: <h1>Our Services</h1>
+  },
+  {
+    path: "/products",
+    element: <h1>Our Products</h1>
+  },
+]);
+
 
 const App = () => {
-
-  let [count , setCount] = useState(0);
-  let[increment , setIncrement] = useState(0);
-
-// runs when the component is mounted and count is updated
-
-  useEffect (() => {
-    console.log('component mounted');
-    console.log('Count' ,count);
-    console.log('Increment', increment);
-  } ,[count]);
-
-  const handleIncrement = () => {
-  //   setCount(count + 1);
-      setIncrement(increment +1);
-  }
-
-  const handleDecrement = () => {
-    setCount(count - 1);
-  }
-  const handleReset = () => {
-    setCount(0);
-  }
-
-  return (
-    <div>
-      <h1>Counter :{count}</h1>
-      <button onClick ={handleIncrement}>Increment</button>
-      <button onClick ={handleDecrement}>Decrement</button>
-      <button onClick  ={handleReset}>Reset</button>
-    </div>
-  )
+  // wrap the app with the RouterProvider
+  return <RouterProvider router={router} />;
 }
-
 export default App;
+
