@@ -1,8 +1,15 @@
 
-import {useState} from 'react';
+import { useEffect ,useState} from 'react';
 
 const App = () => {
+
   let [count , setCount] = useState(0);
+
+// runs when the component is mounted 
+//whenever the state changes (within the component)
+  useEffect (() => {
+    console.log('component mounted');
+  })
 
   const handleIncrement = () => {
     setCount(count + 1);
