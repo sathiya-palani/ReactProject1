@@ -1,28 +1,23 @@
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Register from "./pages/Register";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 // create a router
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>Hello, World!!</h1>
+    element: <Home />
   },
   {
-    path: "/about",
-    element: <h1>About Us</h1>
+    path: "/register",
+    element: <Register />
   },
   {
-    path: "/contact",
-    element: <h1>Contact Us</h1>
-  },
-  {
-    path: "/services",
-    element: <h1>Our Services</h1>
-  },
-  {
-    path: "/products",
-    element: <h1>Our Products</h1>
-  },
+    path: "/login",
+    element: <Login />
+  }
 ]);
 
 
@@ -31,4 +26,3 @@ const App = () => {
   return <RouterProvider router={router} />;
 }
 export default App;
-
