@@ -8,16 +8,27 @@ import Login from "./pages/Login";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
-  },
+    element: <Home />,
+    children :[
+      {
+        path:"/",
+        element:<div>
+          <a href="/register">Register</a> &nbsp;&nbsp; | &nbsp;&nbsp;
+          <a href="/login">Login</a>  
+        </div>
+      },
+  
   {
-    path: "/register",
+    path: "register",
     element: <Register />
   },
   {
-    path: "/login",
+    path: "login",
     element: <Login />
   }
+]
+  },
+
 ]);
 
 
