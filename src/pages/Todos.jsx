@@ -63,7 +63,7 @@ const Todos = () => {
                 <TodoItem 
                     todo={todo}
                     key={todo.id}
-                    onUpdateTodo={handleUpdateTodo}
+                    UpdateTodo={handleUpdateTodo}
                     onDeleteTodo={handleDeleteTodo}
                 />
             ))
